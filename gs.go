@@ -10,6 +10,10 @@ func init() {
 func sortColors(nums []int) {
 	l, m, h := 0, 0, len(nums)-1
 
+	// [m...h] -> Under Concideration ~ <Not yet sorted>
+	// [0...l] -> Visited .L.ow values
+	// [h+1...] -> Visited .H.igh values
+
 	for m <= h {
 		switch nums[m] {
 		case 2:
