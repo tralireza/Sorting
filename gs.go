@@ -28,3 +28,34 @@ func sortColors(nums []int) {
 		}
 	}
 }
+
+// 2037 Minimum Number of Moves to Sear Everyone
+func minMovesToSeat(seats []int, students []int) int {
+	// 1 <= seats[i], students[i] <= 100
+	var fP []int
+
+	for _, Pos := range [][]int{seats, students} {
+		fP = make([]int, 100+1)
+		for _, p := range Pos {
+			fP[p]++
+		}
+
+		i := 0
+		for p, f := range fP {
+			for range f {
+				Pos[i] = p
+				i++
+			}
+		}
+	}
+
+	moves := 0
+	for i := 0; i < len(students) && i < len(seats); i++ {
+		m := students[i] - seats[i]
+		if m < 0 {
+			m *= -1
+		}
+		moves += m
+	}
+	return moves
+}
