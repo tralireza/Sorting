@@ -29,6 +29,12 @@ func sortColors(nums []int) {
 	}
 }
 
+// 128m Longest Consecutive Sequence
+func longestConsecutive(nums []int) int {
+	lcs := 0
+	return lcs
+}
+
 // 2037 Minimum Number of Moves to Sear Everyone
 func minMovesToSeat(seats []int, students []int) int {
 	// 1 <= seats[i], students[i] <= 100
